@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 class Parser:
-    url = 'http://nscm.ru/egeresult/tablresult.php'
+    __url = 'http://nscm.ru/egeresult/tablresult.php'
 
     __results = []
 
@@ -21,7 +21,7 @@ class Parser:
         
     def __get_response(self, data):
         # headers?
-        response = requests.post(self.url, data=data)
+        response = requests.post(self.__url, data=data)
         return response
 
     def __get_html(self, data):
